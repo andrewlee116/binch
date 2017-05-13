@@ -3,3 +3,6 @@ from django.utils import timezone
 
 def index(request):
     return render(request, 'binchgame/index.html',{})
+
+def game(request):
+    return render(request, 'binchgame/game.html', {})
