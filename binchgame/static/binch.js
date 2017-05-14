@@ -63,8 +63,6 @@ function keyStuff(){
         p.move(0, 0);
     else if (keyIsDown(LEFT_ARROW))
         p.move(0, 0);
-    else
-        p.move(0,0);
 }
 
 function obstacleStuff() {
