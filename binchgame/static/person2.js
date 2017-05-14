@@ -37,6 +37,9 @@ function Person(username) {
   this.hit = function(arr) {
       var tempLength = arr[arr.length-1];
       shorten(arr);
+      console.log(arr);
+      console.log(floor(this.y/(750/tempLength)));
+      console.log(arr.indexOf(floor(this.y/(750/tempLength))));
       if(arr.indexOf(floor((this.y)/(750/tempLength)))>=0)
       {
           this.point = this.point + 5;

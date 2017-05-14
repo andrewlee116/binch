@@ -49,7 +49,7 @@ function Obstacle(number,count) {
 
       for(k = 1; k<=tempRand; k++)
       {
-          shuffle(tempArr);
+          shuffle(tempArr,[true]);
           returnArr[k-1]=(tempArr[tempArr.length-1]);
           shorten(tempArr);
       }

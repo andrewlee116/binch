@@ -23,7 +23,7 @@ function Obstacle(number,count) {
   }
 
   this.death = function() {
-      if(this.x<=-261)
+      if(this.x<=-265)
       {
           delete this;
           return true;
@@ -32,7 +32,7 @@ function Obstacle(number,count) {
   }
 
   this.judgement = function() {
-      if(this.x<=-258)
+      if(this.x<=-260)
           return true;
       else
           return false;
@@ -49,13 +49,14 @@ function Obstacle(number,count) {
 
       for(k = 1; k<=tempRand; k++)
       {
-          shuffle(tempArr);
+          shuffle(tempArr,[true]);
           returnArr[k-1]=(tempArr[tempArr.length-1]);
           shorten(tempArr);
       }
 
       var temp = this.blocks.length;
       append(returnArr,temp);
+      shuffle(returnArr,[true]);
       this.successArr = returnArr;
   }
 
