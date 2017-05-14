@@ -4,13 +4,10 @@ var scl = 5;
 
 function setup() {
   createCanvas(1000, 750);
-  p = new Person("Andrew");
-  p2 = new Person("Silap");
-  frameRate(60)
-  ob = new Obstacle(random(2,4));
+  p = new Person("Player 1");
+  frameRate(60);
+  ob = new Obstacle(random(1,6));
   ob.create();
-  //make a random int
-  //createObstacle(random int);
 }
 
 function draw() {
@@ -18,10 +15,13 @@ function draw() {
   //p.death();
   p.update();
   p.show();
-  p2.show();
+  ob.show();
+
+  if(ob.judgement()===true)
+      p.hit(ob.returnSuccessArray());
+
   keyStuff();
   obstacleStuff();
-  ob.show();
 }
 
 function keyStuff(){
@@ -39,6 +39,7 @@ function keyStuff(){
 
 function obstacleStuff() {
     ob.move();
+    ob.makeSuccessArray();
     if(ob.death())
     {
         ob = new Obstacle(random(1,6));

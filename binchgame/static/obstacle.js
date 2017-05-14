@@ -5,6 +5,7 @@ function Obstacle(number) {
   this.yspeed = 0;
   this.number = number;
   this.blocks = [];
+  this.successArr = [];
 
   this.move = function() {
       this.x = this.x + this.xspeed * scl;
@@ -17,7 +18,7 @@ function Obstacle(number) {
           this.blocks[i] = c;
           noStroke();
           fill(c);
-          rect(this.x+300,100/this.number,60,100);
+          rect(this.x+300,(750/(this.number))*(i),10,750/this.number);
       }
   }
 
@@ -30,9 +31,38 @@ function Obstacle(number) {
       return false;
   }
 
-  /*this.randomizeSuccessOrFailure = function() {
+  this.judgement = function() {
+      if(this.x===-260)
+          return true;
+      else
+          return false;
+  }
 
-  }*/
+  //returns an array with the indices of blocks that are success blocks
+  this.makeSuccessArray = function() {
+      var tempArr = [];
+      var returnArr = [];
+
+      for(t = 0; t<this.blocks.length; t++)
+          tempArr[t] = t;
+      var tempRand = random(1,this.blocks.length+1);
+
+      for(k = 1; k<=tempRand; k++)
+      {
+          shuffle(tempArr);
+          returnArr[k-1]=(tempArr[tempArr.length-1]);
+          shorten(tempArr);
+      }
+
+      var temp = this.blocks.length;
+      append(returnArr,temp);
+      this.successArr = returnArr;
+  }
+
+  this.returnSuccessArray = function() {
+      return this.successArr;
+  }
+
 
   this.show = function() {
     for(j = 0; j<this.blocks.length; j++)
@@ -40,7 +70,7 @@ function Obstacle(number) {
         noStroke();
         var temp = this.blocks[j];
         fill(temp);
-        rect(this.x+300,(750/this.number)*j,10,750/this.number); //(this.y)/(j+1)+
+        rect(this.x+300,(750/(this.blocks.length)*(j)),10,750/this.blocks.length); 
     }
-  }
+}
 }

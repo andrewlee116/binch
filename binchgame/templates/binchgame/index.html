@@ -4,16 +4,29 @@
     <head>
         <title>Binch Game</title>
         <script type="text/javascript" src="{% static 'binch.js' %}"></script>
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/binchgame.css' %}">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     </head>
     <body>
-    <h1>Welcome to Binch Game!</h1>
-    <p></p>
-    <h3>By Andrew and Silap</h3>
-    <h2>Instructions</h2>
-    <p>*insert instructions here*</p>
-    <a href="/game/">Click here to play game!</a>
-    <p></p>
-    <img src="http://i.imgur.com/PDu6jo2.jpg">
-    <img src="https://s3.amazonaws.com/cratejoy_vendor_images/treats/bold-copy-6/images/Binch-by-Lotte.png">
+        <div class="page-header">
+            <h1>Welcome to Binch Game!</h1>
+            <p></p>
+            <h3>By Andrew and Silap</h3>
+        </div>
+        <div class="body">
+            <h2>Instructions</h2>
+        <p>You control a dot</p>
+        <p>Walls will come at you with different colors</p>
+        <p>Whichever wall color you hit, you will get +5 or -5 points (based on luck)</p>
+        <p>Move using up and down arrows</p>
+
+
+        <a href="/game/">Click here to play game!</a>
+        </div>
+        <p></p>
+        <img src="http://i.imgur.com/PDu6jo2.jpg">
+        <img src="https://s3.amazonaws.com/cratejoy_vendor_images/treats/bold-copy-6/images/Binch-by-Lotte.png">
     </body>
 </html>

@@ -5,14 +5,11 @@ function Person(username) {
   this.yspeed = 0;
   this.username = username;
   this.points = "0 points";
+  this.point = 0;
 
   this.move = function(xspeed, yspeed) {
     this.xspeed = xspeed;
     this.yspeed = yspeed;
-  }
-
-  this.death = function() {
-      //todo
   }
 
   this.update = function() {
@@ -37,5 +34,15 @@ function Person(username) {
     text(this.points,this.x-wid/2,this.y-53,300,300);
   }
 
+  this.hit = function(arr) {
+      var tempLength = arr[arr.length-1];
+      shorten(arr);
+      if(arr.indexOf(floor((this.y)/(750/tempLength)))>=0)
+           this.point = this.point + 5;
+      else
+          this.point = this.point-5;
+
+      this.points = "" + this.point + " points";
+}
 
 }
