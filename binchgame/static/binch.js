@@ -25,16 +25,6 @@ function draw() {
 }
 
 function keyStuff(){
-<<<<<<< HEAD
-    if (keyIsDown('W'.charCodeAt(0)))
-        p2.move(0, -1);
-    else if (keyIsDown('S'.charCodeAt(0)))
-        p2.move(0, 1);
-    else if (keyIsDown('D'.charCodeAt(0)))
-        p2.move(1, 0);
-    else if (keyIsDown('A'.charCodeAt(0)))
-        p2.move(-1, 0);
-=======
     if (keyIsDown(UP_ARROW))
         p.move(0, -3);
     else if (keyIsDown(DOWN_ARROW))
@@ -43,9 +33,6 @@ function keyStuff(){
         p.move(0, 0);
     else if (keyIsDown(LEFT_ARROW))
         p.move(0, 0);
->>>>>>> a7e527a418fca330d026adf105d9c0f90caf5d80
-    else
-        p2.move(0,0);
 }
 
 function obstacleStuff() {
