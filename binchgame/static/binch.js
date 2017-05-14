@@ -18,14 +18,14 @@ function draw() {
 }
 
 function keyStuff(){
-    if (keyIsDown(UP_ARROW))
-        p.move(0, -1);
-    else if (keyIsDown(DOWN_ARROW))
-        p.move(0, 1);
-    else if (keyIsDown(RIGHT_ARROW))
-        p.move(1, 0);
-    else if (keyIsDown(LEFT_ARROW))
-        p.move(-1, 0);
+    if (keyIsDown('W'.charCodeAt(0)))
+        p2.move(0, -1);
+    else if (keyIsDown('S'.charCodeAt(0)))
+        p2.move(0, 1);
+    else if (keyIsDown('D'.charCodeAt(0)))
+        p2.move(1, 0);
+    else if (keyIsDown('A'.charCodeAt(0)))
+        p2.move(-1, 0);
     else
-        p.move(0,0);
+        p2.move(0,0);
 }
