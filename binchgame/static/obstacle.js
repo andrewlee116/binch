@@ -1,43 +1,46 @@
 function Obstacle(number) {
-  this.x = 50; //right edge of the screen
-  this.y = 50;//100;
+  this.x = 700; //right edge of the screen
+  this.y = 375;
   this.xspeed = -1;
   this.yspeed = 0;
   this.number = number;
+  this.blocks = [];
 
   this.move = function() {
-      this.x = this.x;// + this.xspeed * scl;
+      this.x = this.x + this.xspeed * scl;
   }
 
   this.create = function() {
-      fill(255);
-      rect(this.x,(this.y)+100/this.number,20,100/this.number);
       for(i = 0; i<this.number; i++)
       {
-          //var c = color(50,50,50);//random(256), random(256), random(256));
-          //noStroke();
-          fill(255);
-          rect(this.x,(this.y)+100/this.number,20,100/this.number);
+          var c = color(random(256), random(256), random(256));
+          this.blocks[i] = c;
+          noStroke();
+          fill(c);
+          rect(this.x+300,100/this.number,60,100);
       }
   }
 
   this.death = function() {
-      if(this.x<=0)
-        delete this; //idk if this will work
+      if(this.x<=-350)
+      {
+          delete this;
+          return true;
+      }
+      return false;
   }
 
-  /*this.randomize = function() {
+  /*this.randomizeSuccessOrFailure = function() {
 
   }*/
 
-  /*this.show = function() {
-    fill(255);
-    ellipse(this.x, this.y, scl*4, scl*4);
-
-    fill(150);
-    textSize(20);
-    wid = textWidth(this.username);
-    text(username,this.x-wid/2,this.y-35,300,300);
-
-  }*/
+  this.show = function() {
+    for(j = 0; j<this.blocks.length; j++)
+    {
+        noStroke();
+        var temp = this.blocks[j];
+        fill(temp);
+        rect(this.x+300,(750/this.number)*j,10,750/this.number); //(this.y)/(j+1)+
+    }
+  }
 }

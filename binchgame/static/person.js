@@ -4,6 +4,7 @@ function Person(username) {
   this.xspeed = 0;
   this.yspeed = 0;
   this.username = username;
+  this.points = "0 points";
 
   this.move = function(xspeed, yspeed) {
     this.xspeed = xspeed;
@@ -29,7 +30,12 @@ function Person(username) {
     fill(150);
     textSize(20);
     wid = textWidth(this.username);
-    text(username,this.x-wid/2,this.y-35,300,300);
+    text(this.username,this.x-wid/2,this.y-35,300,300);
 
+    fill(150);
+    textSize(15);
+    text(this.points,this.x-wid/2,this.y-53,300,300);
   }
+
+
 }
