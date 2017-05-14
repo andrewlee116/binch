@@ -2,12 +2,13 @@ var p;
 var ob;
 var scl = 5;
 var count = 0;
+var make = true;
 
 function setup() {
   createCanvas(1000, 750);
   p = new Person("Player 1");
   frameRate(120);
-  ob = new Obstacle(random(1,6),count);
+  ob = new Obstacle(random(2,8),count);
   ob.create();
 }
 
@@ -69,11 +70,14 @@ function keyStuff(){
 
 function obstacleStuff() {
     ob.move();
-    ob.makeSuccessArray();
+    if(make)
+        ob.makeSuccessArray();
+    make = false;
     if(ob.death())
     {
-        count= count + 0.5;
+        count= count + 0.25;
         ob = new Obstacle(random(1,6),count);
         ob.create();
+        make = true;
     }
 }

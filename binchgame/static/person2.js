@@ -43,7 +43,7 @@ function Person(username) {
       }
       else
       {
-          this.point = this.point-5;
+          this.point=-1;
       }
 
       this.points = "" + this.point + " points";

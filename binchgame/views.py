@@ -7,3 +7,6 @@ def index(request):
 
 def game(request):
     return render(request, 'binchgame/game.html', {})
+
+def game2(request):
+    return render(request, 'binchgame/game2.html', {})

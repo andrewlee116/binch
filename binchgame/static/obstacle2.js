@@ -1,7 +1,7 @@
 function Obstacle(number,count) {
   this.x = 700; //right edge of the screen
   this.y = 375;
-  this.xspeed = max(-1-count,-4);
+  this.xspeed = max(-1-count,-10);
   this.yspeed = 0;
   this.number = number;
   this.blocks = [];
@@ -14,7 +14,7 @@ function Obstacle(number,count) {
   this.create = function() {
       for(i = 0; i<this.number; i++)
       {
-          var c = color(random(256), random(256), random(256));
+          var c = color(0, 0, 0);
           this.blocks[i] = c;
           noStroke();
           fill(c);
@@ -23,7 +23,7 @@ function Obstacle(number,count) {
   }
 
   this.death = function() {
-      if(this.x<=-350)
+      if(this.x<=-261)
       {
           delete this;
           return true;
@@ -32,7 +32,7 @@ function Obstacle(number,count) {
   }
 
   this.judgement = function() {
-      if(this.x===-260)
+      if(this.x<=-258)
           return true;
       else
           return false;
@@ -72,5 +72,14 @@ function Obstacle(number,count) {
         fill(temp);
         rect(this.x+300,(750/(this.blocks.length)*(j)),10,750/this.blocks.length);
     }
+
+    for(z = 0; z<this.successArr.length-1;z++)
+    {
+        var c = color(255,255,255);
+        noStroke();
+        fill(c);
+        rect(this.x+300,(750/(this.blocks.length))*(this.successArr[z]),10,750/this.blocks.length);
+    }
+
 }
 }
